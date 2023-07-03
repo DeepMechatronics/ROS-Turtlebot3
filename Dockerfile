@@ -25,10 +25,10 @@ RUN apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
 RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
 
 # Install dependencies
-RUN apt-get update \
-  && rosdep update \
-  && rosdep install --from-paths src -iy \
-  && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update \
+#  && rosdep update \
+#  && rosdep install --from-paths src -iy \
+#  && rm -rf /var/lib/apt/lists/*
 
 # Build the workspace
 # RUN catkin config --extend /opt/ros/melodic --install -i /opt/ros/leo-sim \
