@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y \
     python3-catkin-tools \
   && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install ros-noetic-joy 
+# RUN apt-get install ros-noetic-joy 
 # ros-noetic-teleop-twist-joy \
 #  ros-noetic-teleop-twist-keyboard ros-noetic-laser-proc \
  # ros-noetic-rgbd-launch ros-noetic-rosserial-arduino \
