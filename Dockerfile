@@ -2,8 +2,8 @@ FROM osrf/ros:noetic-desktop-full
 
 # Upgrade packages and install some tools
 RUN apt-get update && apt-get -y upgrade && apt-get install -y \
-    python-rosdep \
-    python-catkin-tools \
+    python3-rosdep \
+    python3-catkin-tools \
   && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get install ros-noetic-joy ros-noetic-teleop-twist-joy \
