@@ -27,11 +27,15 @@ RUN apt-get install ros-noetic-joy -y \
 
 RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
 
+WORKDIR /catkin_ws
+COPY src ./src
 
-WORKDIR ~/catkin_ws/src/
-RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git \
-    cd ~/catkin_ws && catkin_make
+# Install dependencies
 
+RUN apt-get update \
+  && rosdep update \
+  && rosdep install --from-paths src -iy \
+  && rm -rf /var/lib/apt/lists/*
 
 # Install dependencies
 # RUN apt-get update \
