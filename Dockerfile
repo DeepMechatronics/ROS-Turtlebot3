@@ -25,8 +25,7 @@ RUN apt-get install ros-noetic-joy -y \
 #WORKDIR /sim_ws
 #COPY src ./src
 
-RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
-
+RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> /etc/bash.bashrc
 WORKDIR /catkin_ws
 COPY src ./src
 
