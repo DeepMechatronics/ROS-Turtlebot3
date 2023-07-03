@@ -37,6 +37,14 @@ RUN apt-get update \
   && rosdep install --from-paths src -iy \
   && rm -rf /var/lib/apt/lists/*
 
+RUN catkin config --extend /opt/ros/noetic --install -i /opt/ros/turtle-sim \
+  && catkin build --no-status
+
+# Modify the entrypoint file
+RUN sed -i "s|\$ROS_DISTRO|turtle-sim|" /ros_entrypoint.sh
+
+# Run launch file
+CMD ["roslaunch", "turtlebot3_gazebo", "turtlebot3_empty_world.launch"]
 # Install dependencies
 # RUN apt-get update \
 #  && rosdep update \
