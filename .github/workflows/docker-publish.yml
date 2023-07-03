@@ -15,7 +15,7 @@ env:
 
 jobs:
   push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-16.04
 
     permissions:
       contents: read
