@@ -18,12 +18,20 @@ RUN apt-get install ros-noetic-joy -y \
     ros-noetic-dynamixel-sdk \
     ros-noetic-turtlebot3-msgs \ 
     ros-noetic-turtlebot3
+
+
   
 # Clone the source code
 #WORKDIR /sim_ws
 #COPY src ./src
 
 RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> ~/.bashrc
+
+
+WORKDIR ~/catkin_ws/src/
+RUN git clone -b noetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git \
+    cd ~/catkin_ws && catkin_make
+
 
 # Install dependencies
 # RUN apt-get update \
