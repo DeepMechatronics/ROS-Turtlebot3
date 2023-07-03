@@ -43,6 +43,9 @@ RUN catkin config --extend /opt/ros/noetic --install -i /opt/ros/turtle-sim \
 # Modify the entrypoint file
 RUN sed -i "s|\$ROS_DISTRO|turtle-sim|" /ros_entrypoint.sh
 
+
+RUN echo "source /catkin_ws/devel/setup.bash" >> /etc/bash.bashrc
+
 # Run launch file
 CMD ["roslaunch", "turtlebot3_gazebo", "turtlebot3_empty_world.launch"]
 # Install dependencies
