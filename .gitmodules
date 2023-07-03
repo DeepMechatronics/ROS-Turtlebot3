@@ -4,3 +4,6 @@
 [submodule "src/leo_erc_common"]
 	path = src/leo_erc_common
 	url = https://github.com/LeoRover/leo_erc_common.git
+[submodule "src/turtlebot3_simulations"]
+	path = src/turtlebot3_simulations
+	url = https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
