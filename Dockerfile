@@ -25,7 +25,6 @@ RUN apt-get install ros-noetic-joy -y \
 #WORKDIR /sim_ws
 #COPY src ./src
 
-RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> /etc/bash.bashrc
 WORKDIR /catkin_ws
 COPY src ./src
 
@@ -43,6 +42,7 @@ RUN catkin config --extend /opt/ros/noetic --install -i /opt/ros/turtle-sim \
 RUN sed -i "s|\$ROS_DISTRO|turtle-sim|" /ros_entrypoint.sh
 
 
+RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> /etc/bash.bashrc
 RUN echo "source /catkin_ws/devel/setup.bash" >> /etc/bash.bashrc
 
 # Run launch file
