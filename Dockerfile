@@ -41,8 +41,9 @@ RUN catkin config --extend /opt/ros/noetic --install -i /opt/ros/turtle-sim \
 # Modify the entrypoint file
 RUN sed -i "s|\$ROS_DISTRO|turtle-sim|" /ros_entrypoint.sh
 
+ENV TURTLEBOT3_MODEL=waffle_pi
 
-RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> /etc/bash.bashrc
+%RUN echo "export TURTLEBOT3_MODEL=waffle_pi" >> /etc/bash.bashrc
 RUN echo "source /catkin_ws/devel/setup.bash" >> /etc/bash.bashrc
 
 # Run launch file
