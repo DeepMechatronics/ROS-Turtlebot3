@@ -47,7 +47,7 @@ ENV TURTLEBOT3_MODEL=waffle_pi
 RUN echo "source /catkin_ws/devel/setup.bash" >> /etc/bash.bashrc
 
 # Run launch file
-CMD ["roslaunch", "turtlebot3_gazebo", "turtlebot3_empty_world.launch"]
+CMD ["roslaunch", "turtlebot3_gazebo", "turtlebot3_house.launch"]
 # Install dependencies
 # RUN apt-get update \
 #  && rosdep update \
